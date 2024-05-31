@@ -1,0 +1,277 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    transition: .2s linear;
+  }
+
+  :root {
+    --blue: #6b73ff;
+    --white: #ffffff;
+    --black: #000000;
+    --dark: #0c0c1d;
+  }
+
+  html {
+    font-size: 80%;
+    background: #f8f9fb;
+  }
+
+
+  .home {
+    width: 100%;
+    height: fit-content;
+    padding: 0 1.5rem;
+
+  }
+
+  .home .home-image {
+    background: url("/images/landing_background.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home .home-image .home-text {
+    text-align: center;
+    margin-top: 5rem;
+    width: 100%;
+    max-width: 65rem;
+  }
+
+  .home .home-image .home-text h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .home .home-image .home-text p {
+    font-size: 1.5rem;
+    margin: 0 10rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+  }
+
+  .home .home-image .home-text a {
+    color: #000;
+    font-weight: 600;
+    font-size: 1.2rem;
+    border: 2px solid var(--black);
+    padding: .5rem 1.5rem;
+    margin-bottom: 13%;
+    border-radius: .5rem;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .home .home-image .home-text a:hover {
+    background: #000;
+    color: var(--white);
+    font-weight: 400;
+  }
+
+  .home .home-image .home-bottom {
+    width: 100%;
+    padding: 6rem;
+    position: relative;
+  }
+
+  .home-bottom .container {
+    background: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    transform: translate(0, -4.5rem);
+    border-radius: 1.5rem;
+    box-shadow: 2px 2px 35px #161c8a3c;
+    padding: 2.5rem 1rem;
+    width: 88vw;
+    margin: 0 auto;
+  }
+
+  .home-bottom .container .box-home-bottom {
+    padding: .2rem 1rem;
+    width: 100%;
+    flex: 1 0 120px;
+  }
+
+  .home-bottom .container .box-home-bottom:nth-child(1), .container .box-home-bottom:nth-child(2) {
+    border-right: 2px solid var(--black);
+  }
+
+  .home-bottom .container .box-home-bottom h5 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem;
+  }
+
+  .home-bottom .container .box-home-bottom p {
+    color: #444;
+    font-size: 1.1rem;
+  }
+
+  .home-bottom .container .box-home-bottom a {
+    float: right;
+    padding: 1rem 2rem;
+    color: var(--white);
+    background: var(--blue);
+    border-radius: .5rem;
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+
+
+  .home-bottom .container .box-home-bottom a:hover {
+    background: #a7abff;
+  }
+
+  .con-section {
+    padding: 12rem;
+    margin-top: 10rem;
+    background: var(--white);
+  }
+
+  @media (max-width: 1050px) {
+
+    html {
+        font-size: 75%;
+    }
+    .con-section {
+        padding: 10rem 4rem;
+    }
+
+    .contact-us .text h2 {
+        font-size: 4rem;
+    }
+
+    .convenience {
+        padding: 2rem 4rem;
+    }
+
+    .convenience .provided {
+        gap: 3rem;
+        padding: 4rem 0;
+    }
+
+    .convenience .content {
+        margin: 0;
+    }
+
+    .property {
+        padding: 10rem 4rem;
+    }
+
+    .property .de-box-home-bottom {
+        gap: 2rem;
+    }
+
+    .property .de-box-home-bottom .box-home-bottom .image {
+        height: 38vh;
+    }
+
+  }
+
+
+  @media (max-width: 960px) {
+    html {
+        font-size: 70%;
+    }
+
+    header .left-head .logo img {
+        height: 35px;
+    }
+
+    .con-section {
+        margin-top: 15rem;
+    }
+
+    .contact-us {
+        gap: 12rem;
+    }
+
+    .contact-us .text h2 {
+        font-size: 3.3rem;
+    }
+
+    .contact-us .text p {
+        font-size: 1.3rem;
+    }
+
+
+
+
+
+
+  }
+
+  @media (max-width: 780px) {
+
+    .home .home-image .home-text h1 {
+        font-size: 4em;
+    }
+
+    .home .home-image .home-text p {
+        margin: 0;
+        margin-bottom: 3rem;
+    }
+
+    .home-bottom {
+        padding: 0rem;
+    }
+
+    .home-bottom .container {
+        transform: translate(0);
+        margin-top: 4rem;
+    }
+
+    .home-bottom .container .box-home-bottom a {
+        float: none;
+    }
+
+
+
+
+
+
+  }
+
+  @media (max-width: 450px) {
+    html {
+        font-size: 60%;
+    }
+
+    .home .home-image .home-text {
+        padding: 1rem;
+    }
+
+    .home .home-image .home-text p {
+        margin: 0;
+        margin-bottom: 3rem;
+        font-size: 1.8rem;
+        line-height: 1.5;
+    }
+
+    .home .home-image .home-text a {
+        font-size: 1.8rem;
+    }
+
+
+
+    .home-bottom .container .box-home-bottom:nth-child(2) {
+        border: none;
+    }
+  }
+
+  .custom-select-outline {
+    outline: 2px solid rgba(0, 0, 255, 0.237);
+    outline-offset: 0;
+  }

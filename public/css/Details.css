@@ -1,0 +1,218 @@
+:root {
+    --primary-color: #90e0ef;
+    --secondary-color: #00b4d5;
+    --tertiary-color: #0077b6;
+    --yellow-color: #ffb900;
+    --gray-color: #808080;
+}
+
+.main-details {
+    background-color: #ececec;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.main-details .container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-details .box {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 10px 5px 10px 10px rgb(0, 0, 0, 1%);
+    padding: 45px;
+    margin: 15px 0;
+    width: 950px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "images info"
+    "images description";
+    grid-gap: 35px;
+}
+
+.main-details .box .images {
+    grid-area: images;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    "active active active"
+    "idle idle idle";
+    grid-gap: 5px;
+}
+
+.main-details .box .images .img-holder img {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+}
+
+.main-details .box .images .img-holder.active {
+    grid-area: active;
+}
+
+.main-details .box .images .img-holder:not(.active):hover {
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+.main-details .box .basic-info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-details .box .basic-info .rate {
+    color: var(--yellow-color);
+    margin-top: -3%;
+}
+
+.main-details .box .basic-info span {
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.main-details .box .basic-info .options a {
+    color: white;
+    background-color: var(--secondary-color);
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    border-radius: 5px;
+}
+
+.main-details .box .basic-info .options a:hover {
+    background-color: var(--tertiary-color);
+}
+
+.main-details .box .description {
+    grid-area: description;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-details .box .description p {
+    color: var(--gray-color);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.main-details .box .description .features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--gray-color);
+}
+
+.main-details .box .description .features i {
+    margin-right: 5px;
+}
+
+.main-details .box .description .features .fa-circle-check {
+    color: var(--tertiary-color);
+}
+
+.main-details .box .description .features .fa-circle-xmark {
+    color: var(--yellow-color);
+}
+
+.main-details .box .description .social {
+    list-style: none;
+    display: flex;
+}
+
+.main-details .box .description .social a {
+    margin-right: 15px;
+    color: var(--gray-color);
+}
+
+.main-details .box .description .social a:hover {
+    color: var(--secondary-color);
+}
+
+@media (max-width: 991px) {
+    .main-details .box {
+        width: 750px;
+        grid-template-areas: 
+        "info info"
+        "images description";
+    }
+
+    .main-details .box .basic-info .options a {
+        padding: 8.5px 12px;
+    }
+}
+
+@media screen and (max-width: 991px) and (min-width: 769px) {
+    .main-details .box .basic-info span {
+        position: absolute;
+        align-self: flex-end;
+    }
+
+    .main-details .box .basic-info .options {
+        position: absolute;
+        align-self: flex-end;
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-details .box {
+        width: 600px;
+        grid-template-areas: 
+        "images info"
+        "description description";
+    }
+
+    .main-details .box .images {
+        gap: 3px;
+    }
+    
+    .main-details .box .images .img-holder img {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-details .box {
+        width: 100%;
+        min-height: 100vh;
+        border-radius: 0;
+        padding: 35px;
+        margin: 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+        "images"
+        "info"
+        "description";
+    }
+}
+
+
+.map{
+    width: 100%;
+    height: 250px;
+    background-color: gray;
+}

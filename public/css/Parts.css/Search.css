@@ -1,0 +1,11 @@
+#search_bar{
+  width: 70%;
+}
+
+#search_bar .container{
+    background-color: #ececec;
+    height: 75px;
+    border-radius: 15px;
+    box-shadow: 0 0 2px 0 black;
+    
+}

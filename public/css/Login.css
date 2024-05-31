@@ -1,0 +1,80 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ececec;
+    overflow: hidden;
+}
+
+.box-area {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.left-box {
+    background-image: url('/images/image_Login.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.right-box {
+    padding: 40px 30px 40px 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .box-area {
+        margin: 0 10px;
+    }
+
+    .left-box {
+        height: 100px;
+    }
+
+    .right-box {
+        padding: 20px;
+    }
+}
+
+form {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 3%;
+    padding: 20px; 
+    border: 1px solid #424040;
+    border-radius: 10px;
+}
+
+form input {
+    width: calc(100% - 20px); 
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #424040;
+    margin-bottom: 10px; 
+}
+
+form div {
+    width: calc(100% - 20px); 
+}
+
+.titleForm {
+    margin-top: -40px;
+    background: white;
+    padding: 0 20px;
+}
+
+form button {
+    background-color: #424040;
+    padding :3px 20px;
+    margin-bottom: 3%;
+    border-radius:8px;
+    color: white;
+    border: 1px solid #424040;
+    transition: all 0.3s ease;
+}
+
+form button:hover{
+    color: #424040;
+    background-color: white;
+    color: #424040;
+    background-color: white;
+    transform: scale(1.1); 
+}

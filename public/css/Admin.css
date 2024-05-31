@@ -1,0 +1,136 @@
+.main-admin {
+  height: 1000px;
+}
+
+.main-admin .btn-custom {
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+.main-admin .btn-custom:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-admin .modal-header {
+  background-color: #ececec;
+  color: black;
+  border-radius: 20px 20px 0 0;
+}
+
+.main-admin .modal-content {
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-admin .modal-footer {
+  border-radius: 0 0 20px 20px;
+}
+
+.main-admin .custom-file-upload {
+  border: 2px dashed #007bff;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.main-admin .custom-file-upload:hover {
+  background-color: #f8f9fa;
+}
+
+.main-admin .selected-image {
+  max-width: 40%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.main-admin label{
+  margin-left: 1%;
+}
+
+.main-title {
+  text-transform: uppercase;
+  margin: 0 auto 80px;
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-size: 38px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  transition: var(--main-transition);
+}
+
+.main-title::before , .main-title::after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-color: var(--main-color);
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-title::before {
+  left: -30px;
+}
+
+.main-title::after {
+  right: -30px;
+}
+
+.main-title:hover::before {
+  z-index: -1;
+  animation: left-move 0.5s linear forwards;
+}
+
+.main-title:hover::after {
+  z-index: -1;
+  animation: right-move 0.5s linear forwards;
+}
+
+.main-title:hover {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 0.5s;
+}
+
+@keyframes left-move {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
+
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+@keyframes right-move {
+  50% {
+    right: 0;
+    width: 12px;
+    height: 12px;
+  }
+
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 50%;
+    height: 100%;
+  }
+}
+
+.selected-image {
+    width: 200px;
+    margin: 10px;
+}
