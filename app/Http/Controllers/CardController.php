@@ -2,17 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Card;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class imageController extends Controller
+class CardController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    
+
+
     public function index()
-    {
-        //
-    }
+{
+    $userId = Auth::id(); 
+    $cards = Card::with('offre.images')
+                 ->where('user_id', $userId)
+                 ->get();
+    return view('cards', compact('cards'));
+}
+
 
     /**
      * Show the form for creating a new resource.
@@ -27,8 +34,22 @@ class imageController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate the incoming request data
+        $request->validate([
+            'offre_id' => 'required|exists:offres,id',
+            'user_id' => 'required|exists:users,id',
+        ]);
+    
+        // Create a new Card instance
+        $card = new Card;
+        $card->offre_id = $request->offre_id;
+        $card->user_id = $request->user_id;
+        $card->save();
+    
+        // Redirect to User index
+        return redirect()->route('User.index');
     }
+    
 
     /**
      * Display the specified resource.
@@ -59,6 +80,7 @@ class imageController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        Card::destroy($id);
+        return redirect()->route('cards.index');
     }
 }

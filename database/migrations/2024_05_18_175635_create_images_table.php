@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->foreignId('id_offer')->constrained();
+            $table->foreignId('id_offer')->constrained('offres', 'id')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -12,4 +12,11 @@ class Image extends Model
         'path',
         'id_offer'
     ];
+    
+    public function offre()
+    {
+        return $this->belongsTo(Offre::class, 'id_offer');
+    }
 }
+
+

@@ -2,91 +2,80 @@
 
 @section('body')
 
-    <?php
-        $content = "
-        <div class='header-bottom'>
-        <div class='container'>
+<?php
+$content = "
+<div class='header-bottom'>
+  <div class='container'>
 
-        <h3>
-          ".Auth::user()->name."
-        </h3>
+    <h3 class=' text-primary mb-4 custom-header'>
+      ".Auth::user()->name."
+    </h3>
 
-        <nav class='navbar' data-navbar>
+    <nav class='navbar' data-navbar>
 
-          <div class='navbar-top'>
+      <div class='navbar-top'>
 
-            <a href='#' class='logo'>
-              <img src='/images/logo.png' alt='Homeverse logo'>
-            </a>
+        <a href='#' class='logo'>
+          <img src='/images/logo.png' alt='Homeverse logo'>
+        </a>
 
-            <button class='nav-close-btn' data-nav-close-btn aria-label='Close Menu'>
-              <ion-icon name='close-outline'></ion-icon>
-            </button>
-
-          </div>
-
-          <div class='navbar-bottom'>
-            <ul class='navbar-list'>
-
-
-            </ul>
-          </div>
-
-        </nav>
-
-        <div class='header-bottom-actions'>
-
-          <button class='header-bottom-actions-btn' aria-label='Search'>
-            <a href='#Recherche'>
-              <ion-icon name='search-outline'></ion-icon>
-            </a>
-
-            <span>Search</span>
-          </button>
-
-
-          <button data-bs-toggle='modal' data-bs-target='#UpdateUser' class='header-bottom-actions-btn' aria-label='Profile'>
-            <ion-icon name='person-outline'></ion-icon>
-
-            <span>Profile</span>
-          </button>
-
-          <button class='header-bottom-actions-btn' aria-label='Cart'>
-            <ion-icon name='cart-outline'></ion-icon>
-
-            <span>Cart</span>
-          </button>
-
-          <button class='header-bottom-actions-btn' aria-label='Favorites'>
-            <a href='/Favorites'>
-              <ion-icon name='heart-outline'></ion-icon>
-            </a>
-
-
-            <span>Favorites</span>
-          </button>
-
-          <button  data-bs-toggle='modal' data-bs-target='#message_Log_out' class='header-bottom-actions-btn' aria-label='Log out'>
-            <ion-icon name='log-out-outline'></ion-icon>
-
-            <span>Log out</span>
-          </button>
-          
-          <button class='d-none header-bottom-actions-btn' data-nav-open-btn aria-label='Open Menu'>
-            <ion-icon name='menu-outline'></ion-icon>
-
-            <span>Menu</span>
-          </button>
-          
-        </div>
+        <button class='nav-close-btn' data-nav-close-btn aria-label='Close Menu'>
+          <ion-icon name='close-outline'></ion-icon>
+        </button>
 
       </div>
-        ";  
 
-        $etat = "";
-        $link = 'User';
+      <div class='navbar-bottom'>
+        <ul class='navbar-list'>
+          <!-- Add other navbar items here -->
+        </ul>
+      </div>
+
+    </nav>
+
+    <div class='header-bottom-actions'>
+
+      <button class='header-bottom-actions-btn' aria-label='Search'>
+        <a href='#Recherche'>
+          <ion-icon name='search-outline'></ion-icon>
+        </a>
+        <span>Search</span>
+      </button>
+
+      <button data-bs-toggle='modal' data-bs-target='#UpdateUser' class='header-bottom-actions-btn' aria-label='Profile'>
+        <ion-icon name='person-outline'></ion-icon>
+        <span>Profile</span>
+      </button>
+
+      <button class='header-bottom-actions-btn' aria-label='Cart'>
+        <a href='".route('cards.index')."'>
+          <ion-icon name='cart-outline'></ion-icon>
+        </a>
+        <span>Cart</span>
+      </button>
+
       
-    ?>
+
+      <button data-bs-toggle='modal' data-bs-target='#message_Log_out' class='header-bottom-actions-btn' aria-label='Log out'>
+        <ion-icon name='log-out-outline'></ion-icon>
+        <span>Log out</span>
+      </button>
+      
+      <button class='d-none header-bottom-actions-btn' data-nav-open-btn aria-label='Open Menu'>
+        <ion-icon name='menu-outline'></ion-icon>
+        <span>Menu</span>
+      </button>
+      
+    </div>
+
+  </div>
+</div>
+";
+
+$etat = "";
+$link = 'User';
+?>
+
 
     <header>
         @include("Parts.Header",["content"=>$content])

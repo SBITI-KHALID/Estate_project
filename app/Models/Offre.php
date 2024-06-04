@@ -18,4 +18,10 @@ class Offre extends Model
         'Price',
         'Type_Offre'
     ];
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'id_offer');
+    }
 }
+

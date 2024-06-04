@@ -4,6 +4,7 @@ use App\Http\Controllers\OffreController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,4 +39,10 @@ Route::middleware(['auth'])->group(function(){
     
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
+
+Route::post('/cards/store', [CardController::class, 'store'])->name('cards.store');
+
+Route::delete('/cards/destroy/{id}', [CardController::class, 'destroy'])->name('cards.destroy');
+
+Route::get('/cards/index', [CardController::class, 'index'])->name('cards.index');
 
